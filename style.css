@@ -1,0 +1,18 @@
+img {
+  width: 500px;
+  border-style: solid;
+}
+body {
+  text-align: center;
+  font-family: 'Arial';
+  font-size: x-large;
+  font-weight: bolder;
+  background-color: azure;
+  color: blue;
+}
+.js-boba {
+  width: 200px;
+}
+.js-label {
+  font-size: xx-large;
+}
