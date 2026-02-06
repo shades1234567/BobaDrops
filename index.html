@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+      <link rel="stylesheet" href="style.css"/>
+      <title>BOBA TEA WEBSITE</title>
+    </head>
+    <body>
+        <img src="https://veggiefestchicago.org/wp-content/uploads/2021/05/21-bumble.jpg"/>
+        <h1><marquee><strong>BUBBLE TEA</strong></marquee></h1>
+        <p><strong>PLAY BOBA, STRAW, MILK</strong></p>
+        <p><strong>BOBA BEATS STRAW, STRAW BEATS MILK, MILK BEATS BOBA</strong></p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf0vlbcTsVOnZKz3pQdj6xiBpH_rWN_B3J7Q&s" class="js-boba" onclick="
+          playGame('Boba');
+        "/>
+        <img src="https://eu-images.contentstack.com/v3/assets/blt08823f5db61ded5d/bltafe3dc5b73b5566c/659481621ddd3e0407111a77/drinking-straw.jpg" class="js-boba" onclick="
+          playGame('Straw');
+        "/>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKRc1vsNojeMRzLpjSF-_g3ihYlGBwVgpNqw&s" class="js-boba" onclick="
+          playGame('Milk');
+        "/>
+        <p class="js-label"></p>
+        <h1>TOP TEN BOBA TEA FACTS!?!??!</h1>
+        <p>1. Tapioca is made from vegetables.</p>
+        <p>2. Boba Tea Originated in Taiwan.</p>
+        <p>3. Boba Tea was created in the 1980s.</p>
+        <p>4. Boba Tea is globally popular</p>
+        <p>5. Boba Tea was first served as Ice Tea.</p>
+        <script>
+          const label = document.querySelector('.js-label');
+          let result = '';
+          let computerMove = '';
+          function playGame(playerMove) {
+            //1 is boba 2 is straw 3 is milk
+            const choice = Math.floor(Math.random() * 3) + 1;
+            if(playerMove === 'Boba') {
+              if(choice === 1) {
+                computerMove = 'Boba';
+                result = 'Tie!';
+              } else if(choice === 2) {
+                computerMove = 'Straw';
+                result = 'Victory!';
+              } else if(choice === 3) {
+                computerMove = 'Milk';
+                result = 'You Lost!';
+              }
+            } else if(playerMove === 'Straw') {
+              if(choice === 1) {
+                computerMove = 'Boba';
+                result = 'You Lost!';
+              } else if(choice === 2) {
+                computerMove = 'Straw';
+                result = 'Tie!';
+              } else if(choice === 3) {
+                computerMove = 'Milk';
+                result = 'Victory!';
+              }
+            } else if(playerMove === 'Milk') {
+              if(choice === 1) {
+                computerMove = 'Boba';
+                result = 'Victory!';
+              } else if(choice === 2) {
+                computerMove = 'Straw';
+                result = 'You Lost!';
+              } else if(choice === 3) {
+                computerMove = 'Milk';
+                result = 'Tie!';
+              }
+            }
+            label.innerText = `${result} Computer chose ${computerMove} and you choose ${playerMove}`;
+          }
+        </script>
+    </body>
+</html>
